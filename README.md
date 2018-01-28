@@ -6,12 +6,12 @@ This is a small tutorial demonstrating ConfigMaps with Kubenetes
     
 
 
-#### Kubernetes plays well with Microservices and Software-as-a-Service ()
-##### The twelve-factor app is a methodology for building software-as-a-service apps declares that configuration should be declared at runtime.
+## Kubernetes plays well with Microservices and Software-as-a-Service ()
+### The twelve-factor app is a methodology for building software-as-a-service apps declares that configuration should be declared at runtime.
 
-######There are three methods of doing this:
+####There are three methods of doing this:
 
-####### 1.  Using command line parameters
+##### 1.  Using command line parameters
 
     kubectl create -f configmap.yaml
     kubectl create -f pod-cmdline.yaml
@@ -19,7 +19,7 @@ This is a small tutorial demonstrating ConfigMaps with Kubenetes
     kubectl logs pod-cmdline-config
 
 
-####### 2.  Using environment variables
+##### 2.  Using environment variables
 
     kubectl create -f configmap.yaml
     kubectl create -f pod-environment.yaml
@@ -27,7 +27,7 @@ This is a small tutorial demonstrating ConfigMaps with Kubenetes
     env
 
 
-####### 3.  Using a file or a volume
+##### 3.  Using a file or a volume
 
     kubectl create -f configmap.yaml
     kubectl create -f pod-volume.yaml
