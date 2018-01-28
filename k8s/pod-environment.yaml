@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: pod-environment-config
+spec:
+   containers:
+     - name:  test-container
+       image: busybox
+       command:  [ "/bin/sh", "-c", "--"]
+       args:  ["while true; do sleep 30; done;"]
+       env:
+         - name:  LOG_LEVEL
+           valueFrom:
+             configMapKeyRef:
+              name:  log-config
+              key: log.level
+         - name:  LOG_LOCATION
+           valueFrom:
+             configMapKeyRef:
+               name:  log-config
+               key:  log.location
+       imagePullPolicy: IfNotPresent
+   restartPolicy: Never

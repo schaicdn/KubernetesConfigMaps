@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: pod-cmdline-config
+spec:
+   containers:
+     - name:  test-container
+       image: busybox
+       command:  [ "/bin/sh", "-c", "echo Log Level:  $(LOG_LEVEL)  Log Location:  $(LOG_LOCATION)"]
+       env:
+         - name:  LOG_LEVEL
+           valueFrom:
+             configMapKeyRef:
+              name:  log-config
+              key: log.level
+         - name:  LOG_LOCATION
+           valueFrom:
+             configMapKeyRef:
+               name:  log-config
+               key:  log.location
+       imagePullPolicy: IfNotPresent
+   restartPolicy: Never
