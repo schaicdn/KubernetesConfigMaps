@@ -3,7 +3,7 @@ This is a small tutorial demonstrating ConfigMaps with Kubenetes
 
 
 ### Tutorial from :
-    https://medium.com/google-cloud/running-a-simple-kubernetes-frontend-backend-service-on-google-cloud-platform-85eb0346f600
+    
 
 
 #### Kubernetes plays well with Microservices and Software-as-a-Service ()
